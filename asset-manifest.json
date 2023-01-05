@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/mapWithLeafLet/static/css/main.4b5f7b47.css",
+    "main.js": "/mapWithLeafLet/static/js/main.46d9f396.js",
+    "index.html": "/mapWithLeafLet/index.html",
+    "main.4b5f7b47.css.map": "/mapWithLeafLet/static/css/main.4b5f7b47.css.map",
+    "main.46d9f396.js.map": "/mapWithLeafLet/static/js/main.46d9f396.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4b5f7b47.css",
+    "static/js/main.46d9f396.js"
+  ]
+}
