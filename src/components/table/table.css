@@ -1,0 +1,12 @@
+.container-content {
+	width: 95%;
+	border: 2px solid green;
+	max-width: 500px;
+	background-color: #cdcdcd;
+	height: 900px;
+}
+
+h2{
+	text-align: center;
+	
+}

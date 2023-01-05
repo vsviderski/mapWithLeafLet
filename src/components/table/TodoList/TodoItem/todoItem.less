@@ -1,0 +1,75 @@
+.todoItem_ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 55px;
+  width: 95%;
+  height: 55px;
+}
+
+.todoItem_ul.items {
+  text-decoration: line-through solid #EEE8AA;
+  text-decoration-thickness:4px ;
+}
+
+.todoItem_li {
+  width: 20%;
+  text-align: center;
+	word-break: break-all;
+
+  color: #000;
+  position: relative;
+}
+
+.column {
+  font-weight: 700;
+  font-size: 16px;
+  font-family: 'Caveat', cursive;
+}
+
+
+
+button {
+	border-radius: 5px;
+	margin: 0 5px;
+	border: 2px solid #cdcdcd;
+	color: #fff;
+	box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+	-webkit-transition: all 150ms ease-in-out;
+	transition: all 150ms ease-in-out;
+}
+
+button:hover {
+	box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+}
+
+.buttons {
+  position: absolute;
+
+  top: -20px;
+}
+
+.edit_inputs {
+  display: flex;
+}
+
+.text {
+  color: #ffecec;
+  font-weight: 700;
+}
+
+.wrap-content {
+  display: flex;
+}
+
+.wrap-content__active {
+  display: flex;
+  background-color:#3498db;
+}
+
+
+.save_button {
+  position: absolute;
+  right: 4px;
+  top: 6px;
+}
