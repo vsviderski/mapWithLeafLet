@@ -26,7 +26,6 @@ const AddTodo = ({ todoList, setTodoList }) => {
 				{
 					id: Math.random(),
 					number:number,
-					status: true,
 					fromLatitude: fromLatitude,
 					fromLongitude: fromLongitude,
 					toLatitude:toLatitude,

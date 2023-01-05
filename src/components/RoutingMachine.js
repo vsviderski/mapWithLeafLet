@@ -1,20 +1,12 @@
 import { useEffect } from "react";
-import L from 'leaflet/dist/leaflet'
-import 'leaflet-routing-machine'
+import L from 'leaflet'
+import 'leaflet-routing-machine';
+import 'leaflet-routing-machine/dist/leaflet-routing-machine.css';
 
 
 
-const LeafletRoutingMachine = ({todoList}) => {
-
-
-console.log(todoList)
-
+const LeafletRoutingMachine = () => {
 useEffect(()=>{
-	
-	let map = L.map('map', {
-		center: [50.22, 30.22],
-		zoom: 3,
-		 });
 
 	L.Routing.control({
 		waypoints: [
@@ -24,10 +16,7 @@ useEffect(()=>{
 	}).addTo(map);
 }, [])
 return (
-
-<div id="map"></div>
-
-	
+null	
 )
 }
 

@@ -12,15 +12,11 @@ const TodoItem = ({ setTodoList, todoItem}) => {
 
 	return (
 		<div
-			className={active ? "wrap-content__active" : "wrap-content"}
+			className={ active? "wrap-content__active" : "wrap-content"}
 			onClick={() => setActive(!active)}
 			active={active}
 		>
-			<div
-				className={
-					todoItem.status === true ? "todoItem_ul" : "todoItem_ul items"
-				}
-			>
+			<div className= "todoItem_ul">
 				<div className="todoItem_li" >{todoItem.number}</div>
 				<div className="todoItem_li">{todoItem.fromLatitude}</div>
 				<div className="todoItem_li">{todoItem.fromLongitude}</div>
