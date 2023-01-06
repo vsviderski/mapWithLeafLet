@@ -8,7 +8,9 @@
     "@fortawesome/free-regular-svg-icons": "^6.2.1",
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
     "@fortawesome/react-fontawesome": "github:fortawesome/react-fontawesome",
+    "@reduxjs/toolkit": "^1.9.1",
     "antd": "^5.1.2",
+    "axios": "^1.2.2",
     "craco-less": "^2.1.0-alpha.0",
     "dayjs": "^1.11.7",
     "leaflet": "^1.9.3",
@@ -16,7 +18,9 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-leaflet": "^2.8.0",
-    "react-scripts": "^5.0.1"
+    "react-redux": "^8.0.5",
+    "react-scripts": "^5.0.1",
+    "redux-saga": "^1.2.2"
   },
   "scripts": {
     "start": "craco start",
