@@ -1,22 +1,23 @@
 import { useState } from "react";
+import { useActions } from "hooks/useActions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
-import "./todoItem.less";
+import "./route.less";
 
-const TodoItem = ({ setTodoList, todoItem}) => {
+const Route = ({ todoItem }) => {
+	const { removeCoordinate, getPolylineAction } = useActions();
 	const [active, setActive] = useState(false);
-
-	const deleteTodo = (id) => {
-		setTodoList((prev) => [...prev.filter((item) => item.id !== id)]);
-	};
 
 	return (
 		<div
-			className={ active? "wrap-content__active" : "wrap-content"}
-			onClick={() => setActive(!active)}
+			className={active ? "wrap-content__active" : "wrap-content"}
+			onClick={() => {
+				setActive(!active)
+				getPolylineAction(todoItem)
+			}}
 			active={active}
 		>
-			<div className= "todoItem_ul">
+			<div className="todoItem_ul">
 				<div className="todoItem_li" >{todoItem.number}</div>
 				<div className="todoItem_li">{todoItem.fromLatitude}</div>
 				<div className="todoItem_li">{todoItem.fromLongitude}</div>
@@ -24,7 +25,7 @@ const TodoItem = ({ setTodoList, todoItem}) => {
 				<div className="todoItem_li">{todoItem.toLongitude}</div>
 				<div className="todoItem_li">
 					<div className="buttons">
-						<button onClick={() => deleteTodo(todoItem.id)}>
+						<button onClick={() => removeCoordinate(todoItem.id)}>
 							<span className="text">
 								<FontAwesomeIcon icon={faTrash} />
 							</span>
@@ -36,4 +37,4 @@ const TodoItem = ({ setTodoList, todoItem}) => {
 	);
 };
 
-export default TodoItem;
+export default Route;

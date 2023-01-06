@@ -1,37 +1,29 @@
 import { useState } from "react";
-
-import Input from "./Input/Input";
-
+import { useActions } from "hooks/useActions";
+import Input from "./components/Input";
 import "./addtodo.less";
 
-
-const AddTodo = ({ todoList, setTodoList }) => {
-	const [number, setNumber] = useState(null);
+const AddRoute = () => {
+	const { addCoordinate } = useActions();
+	const [number, setNumber] = useState('');
 	const [fromLatitude, setFromLatitude] = useState();
-	const [fromLongitude , setFromLongitude]= useState();
+	const [fromLongitude, setFromLongitude] = useState();
 	const [toLatitude, setToLatitude] = useState();
-	const [toLongitude , setToLongitude]= useState();
+	const [toLongitude, setToLongitude] = useState();
 
 	const [isCheckForm, setIsCheckForm] = useState(false);
 	const titleInputError = isCheckForm && !number;
-	
 
-	
-	
-	const saveTodo = () => {
-	
+	const addNewCoordinate = () => {
 		if (number && fromLatitude && fromLongitude && toLatitude && toLongitude) {
-			setTodoList([
-				...todoList,
-				{
+			addCoordinate({
 					id: Math.random(),
-					number:number,
+					number: number,
 					fromLatitude: fromLatitude,
 					fromLongitude: fromLongitude,
-					toLatitude:toLatitude,
-					toLongitude:toLongitude,
-				},
-			]);
+					toLatitude: toLatitude,
+					toLongitude: toLongitude,
+				});
 			setNumber('');
 			setFromLatitude('');
 			setFromLongitude('');
@@ -47,51 +39,48 @@ const AddTodo = ({ todoList, setTodoList }) => {
 		<div className="todo_container">
 			<div className="todo_content">
 				<div className="todo_inputs">
-				<Input
+					<Input
 						inputError={titleInputError}
-						title="Номер заявки"		
+						title="Номер заявки"
 						placeholder="№"
 						value={number}
 						onChange={setNumber}
-						/>
-				
-				<Input
+					/>
+					<Input
 						inputError={titleInputError}
-						title="Координаты ОТ"		
+						title="Координаты ОТ"
 						placeholder="ОТ lat. "
 						value={fromLatitude}
 						onChange={setFromLatitude}
-						/>
-
-				<Input
+					/>
+					<Input
 						inputError={titleInputError}
-						title="Координаты ОТ"		
+						title="Координаты ОТ"
 						placeholder="ОТ lng."
 						value={fromLongitude}
 						onChange={setFromLongitude}
-						/>
+					/>
 					<Input
 						inputError={titleInputError}
-						title="Координаты ДО"		
+						title="Координаты ДО"
 						placeholder="ДО lat."
 						value={toLatitude}
 						onChange={setToLatitude}
-						/>
-					<Input 
+					/>
+					<Input
 						inputError={titleInputError}
-						title="Координаты ДО"		
+						title="Координаты ДО"
 						placeholder="ДО lng."
 						value={toLongitude}
 						onChange={setToLongitude}
-						/>
-					</div>
-			
+					/>
+				</div>
 			</div>
-			<button className="btn" onClick={saveTodo}>
+			<button className="btn" onClick={addNewCoordinate}>
 				<span className="text">Добавить</span>
 			</button>
 		</div>
 	);
 };
 
-export default AddTodo;
+export default AddRoute;
