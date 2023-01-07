@@ -1,24 +1,53 @@
-import LeafletRoutingMachine from "./RoutingMachine";
-import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import L from 'leaflet';
+import 'leaflet-routing-machine';
+import 'leaflet-routing-machine/dist/leaflet-routing-machine.css';
 
-const MainMap = () => {
-  const position = [59.57, 30.19];
+const LeafletMap = () => {
+  const polylineData = useSelector(state => state.polyline.polylineOptions);
+  const [map, setMap] = useState(null)
+  const [route, setRoute] = useState(null)
 
-  return (
-    <>
-      <Map center={position} zoom={10} scrollWheelZoom={true}>
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-        <Marker position={position}>
-          <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup>
-        </Marker>
-        <LeafletRoutingMachine />
-      </Map>
-    </>
-  );
+  useEffect(() => {
+    const leafletMap = L.map('map').setView([51.505, -0.09], 13);
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(leafletMap);
+    setMap(leafletMap)
+  }, [])
+
+
+  useEffect(() => {
+    if (polylineData) {
+      const [fromLatitude, fromLongitude] = polylineData.waypoints[0].location
+      const [toLatitude, toLongitude] = polylineData.waypoints[1].location
+      const container = L.DomUtil.get('map');
+
+      if (container !== null) {
+        container._leaflet_id = null;
+      }
+
+      if (route) {
+        route.spliceWaypoints(0, 2)
+      }
+
+      map.setView([fromLatitude, fromLongitude], 13);
+      L.icon({})
+
+      const newRoute = L.Routing.control({
+        waypoints: [L.latLng(fromLatitude, fromLongitude), L.latLng(toLatitude, toLongitude)],
+        lineOptions: {
+          styles: [
+            { color: '#439958', fill: true, fillColor: 'yellow', weight: 5, fillOpacity: 0.4 },
+          ]
+        }
+      }).addTo(map)
+
+      setRoute(newRoute)
+    }
+  }, [polylineData, map]);
+
+  return <div id='map' />;
 };
 
-export default MainMap;
+export default LeafletMap;
