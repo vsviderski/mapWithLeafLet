@@ -18,9 +18,9 @@ const RoutesTable = () => {
 			</div>
 			}
 			{routes.map((todoItem) => (
-				<div 
-					key={todoItem.id} 
-					className={state === todoItem ? "todoItem_ul-active" : "todoItem_ul"} 
+				<div
+					key={todoItem.id}
+					className={state === todoItem ? "todoItem_ul-active" : "todoItem_ul"}
 					onClick={() => setState(todoItem)}
 				>
 					<Route todoItem={todoItem} />
