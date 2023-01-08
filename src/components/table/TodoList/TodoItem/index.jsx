@@ -6,19 +6,17 @@ import "./route.less";
 
 const Route = ({ todoItem }) => {
 	const { removeCoordinate, getPolylineAction } = useActions();
-	const [active, setActive] = useState(false);
 
 	return (
 		<div
-			className={active ? "wrap-content__active" : "wrap-content"}
+			className="wrap-content"
 			onClick={() => {
-				setActive(!active)
 				getPolylineAction(todoItem)
 			}}
-			active={active}
+		
 		>
-			<div className="todoItem_ul">
-				<div className="todoItem_li" >{todoItem.number}</div>
+			<div className="todoItem_lists"  >
+				<div className="todoItem_li">{todoItem.number}</div>
 				<div className="todoItem_li">{todoItem.fromLatitude}</div>
 				<div className="todoItem_li">{todoItem.fromLongitude}</div>
 				<div className="todoItem_li">{todoItem.toLatitude}</div>

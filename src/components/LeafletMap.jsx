@@ -6,6 +6,10 @@ import 'leaflet-routing-machine';
 import 'leaflet-routing-machine/dist/leaflet-routing-machine.css';
 
 const LeafletMap = () => {
+
+
+
+ 
   const polylineData = useSelector(state => state.polyline.polylineOptions);
   const [map, setMap] = useState(null)
   const [route, setRoute] = useState(null)
@@ -18,6 +22,7 @@ const LeafletMap = () => {
 
 
   useEffect(() => {
+
     if (polylineData) {
       const [fromLatitude, fromLongitude] = polylineData.waypoints[0].location
       const [toLatitude, toLongitude] = polylineData.waypoints[1].location
@@ -44,6 +49,19 @@ const LeafletMap = () => {
       }).addTo(map)
 
       setRoute(newRoute)
+
+
+
+    
+
+
+      let southWest = L.latLng(59.84660399, 30.29496392),
+      northEast = L.latLng(59.82934196, 30.82423701),
+      bounds = L.latLngBounds(southWest, northEast);
+      map.panInsideBounds(bounds);
+    
+
+
     }
   }, [polylineData, map]);
 
