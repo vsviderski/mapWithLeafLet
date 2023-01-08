@@ -1,6 +1,6 @@
 {
   "name": "map-app",
-  "homepage": "https://Shkirenkoroma.github.io/mapWithLeafLet",
+  "homepage": "https://Shkirenkoroma.github.io/leafletReactJS",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
