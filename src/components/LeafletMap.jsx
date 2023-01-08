@@ -27,7 +27,7 @@ const LeafletMap = () => {
       }
 
       if (route) {
-        route.remove()
+        route.remove();
       }
 
       map.setView([fromLatitude, fromLongitude]);
