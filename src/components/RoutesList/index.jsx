@@ -1,6 +1,6 @@
 import AddRoute from './AddRoute';
 import RoutesTable from './RoutesTable';
-import './routesList.css';
+import './style.less';
 
 const RoutesList = () => {
   return (

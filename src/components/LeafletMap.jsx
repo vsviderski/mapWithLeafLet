@@ -11,7 +11,7 @@ const LeafletMap = () => {
   const [route, setRoute] = useState(null)
 
   useEffect(() => {
-    const leafletMap = L.map('map').setView([51.505, -0.09], 13);
+    const leafletMap = L.map('map').setView([59.56, 30.18], 8);
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(leafletMap);
     setMap(leafletMap);
   }, [])

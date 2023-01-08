@@ -1,4 +1,4 @@
-import "./input.less";
+import "./style.less";
 
 const Input = (props) => {
 	const { inputError, title, placeholder, type = 'text', value, onChange } = props;
@@ -7,13 +7,13 @@ const Input = (props) => {
 		<div className="input_container">
 			<div className="input_title">{title}</div>
 			<input
-				className={inputError ? 'input_error' : ''}
+				className={inputError && 'input_error'}
 				placeholder={placeholder}
 				type={type}
 				value={value}
 				onChange={(e) => onChange(e.target.value)}
 			/>
-			{inputError ? <div className="input_error_message">Поле не может быть пустым</div> : null}
+			{inputError ? <div className="input_error_message">Заполните поле</div> : null}
 		</div>
 	);
 }
