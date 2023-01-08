@@ -5,20 +5,18 @@ import "./addRoute.less";
 
 const AddRoute = () => {
 	const { addCoordinate } = useActions();
-	const [number, setNumber] = useState('');
-	const [fromLatitude, setFromLatitude] = useState();
-	const [fromLongitude, setFromLongitude] = useState();
-	const [toLatitude, setToLatitude] = useState();
-	const [toLongitude, setToLongitude] = useState();
-
+	const [routeNumber, setNumber] = useState('');
+	const [fromLatitude, setFromLatitude] = useState('');
+	const [fromLongitude, setFromLongitude] = useState('');
+	const [toLatitude, setToLatitude] = useState('');
+	const [toLongitude, setToLongitude] = useState('');
 	const [isCheckForm, setIsCheckForm] = useState(false);
-	const titleInputError = isCheckForm && !number;
 
 	const addNewCoordinate = () => {
-		if (number && fromLatitude && fromLongitude && toLatitude && toLongitude) {
+		if (routeNumber && fromLatitude && fromLongitude && toLatitude && toLongitude) {
 			addCoordinate({
 					id: Math.random(),
-					number: number,
+					number: routeNumber,
 					fromLatitude: fromLatitude,
 					fromLongitude: fromLongitude,
 					toLatitude: toLatitude,
@@ -40,35 +38,35 @@ const AddRoute = () => {
 			<div className="todo_content">
 				<div className="todo_inputs">
 					<Input
-						inputError={titleInputError}
+						inputError={isCheckForm}
 						title="Номер заявки"
 						placeholder="№"
-						value={number}
+						value={routeNumber}
 						onChange={setNumber}
 					/>
 					<Input
-						inputError={titleInputError}
+						inputError={isCheckForm}
 						title="Координаты ОТ"
 						placeholder="ОТ lat. "
 						value={fromLatitude}
 						onChange={setFromLatitude}
 					/>
 					<Input
-						inputError={titleInputError}
+						inputError={isCheckForm}
 						title="Координаты ОТ"
 						placeholder="ОТ lng."
 						value={fromLongitude}
 						onChange={setFromLongitude}
 					/>
 					<Input
-						inputError={titleInputError}
+						inputError={isCheckForm}
 						title="Координаты ДО"
 						placeholder="ДО lat."
 						value={toLatitude}
 						onChange={setToLatitude}
 					/>
 					<Input
-						inputError={titleInputError}
+						inputError={isCheckForm}
 						title="Координаты ДО"
 						placeholder="ДО lng."
 						value={toLongitude}
