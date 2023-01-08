@@ -1,29 +1,28 @@
-import { useState } from "react";
 import { useActions } from "hooks/useActions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import "./route.less";
 
-const Route = ({ todoItem }) => {
+const Route = ({ route }) => {
 	const { removeCoordinate, getPolylineAction } = useActions();
 
 	return (
 		<div
 			className="wrap-content"
 			onClick={() => {
-				getPolylineAction(todoItem)
+				getPolylineAction(route)
 			}}
 		
 		>
 			<div className="todoItem_lists"  >
-				<div className="todoItem_li">{todoItem.number}</div>
-				<div className="todoItem_li">{todoItem.fromLatitude}</div>
-				<div className="todoItem_li">{todoItem.fromLongitude}</div>
-				<div className="todoItem_li">{todoItem.toLatitude}</div>
-				<div className="todoItem_li">{todoItem.toLongitude}</div>
+				<div className="todoItem_li">{route.number}</div>
+				<div className="todoItem_li">{route.fromLatitude}</div>
+				<div className="todoItem_li">{route.fromLongitude}</div>
+				<div className="todoItem_li">{route.toLatitude}</div>
+				<div className="todoItem_li">{route.toLongitude}</div>
 				<div className="todoItem_li">
 					<div className="buttons">
-						<button onClick={() => removeCoordinate(todoItem.id)}>
+						<button onClick={() => removeCoordinate(route.id)}>
 							<span className="text">
 								<FontAwesomeIcon icon={faTrash} />
 							</span>

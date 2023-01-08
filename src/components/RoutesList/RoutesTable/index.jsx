@@ -5,7 +5,7 @@ import "./routesTable.less";
 
 const RoutesTable = () => {
 	const routes = useSelector(state => state.coordinates);
-	const [state, setState] = useState(null)
+	const [selectedRoute, setSelectedRoute] = useState(null)
 
 	return (
 		<div>
@@ -17,13 +17,13 @@ const RoutesTable = () => {
 				<div className="todolist_item">ДО lng.</div>
 			</div>
 			}
-			{routes.map((todoItem) => (
+			{routes.map((route) => (
 				<div
-					key={todoItem.id}
-					className={state === todoItem ? "todoItem_ul-active" : "todoItem_ul"}
-					onClick={() => setState(todoItem)}
+					key={route.id}
+					className={selectedRoute === route ? "todoItem_ul-active" : "todoItem_ul"}
+					onClick={() => setSelectedRoute(route)}
 				>
-					<Route todoItem={todoItem} />
+					<Route route={route} />
 				</div>
 			))}
 		</div>
