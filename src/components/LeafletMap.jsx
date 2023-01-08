@@ -1,6 +1,6 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { collapseRoutersPanel } from './utils/collapseRoutersPanel';
 import L from 'leaflet';
 import 'leaflet-routing-machine';
 import 'leaflet-routing-machine/dist/leaflet-routing-machine.css';
@@ -41,7 +41,9 @@ const LeafletMap = () => {
         },
         collapsible: true
       }).addTo(map);
-      
+
+      collapseRoutersPanel();
+
       const southWest = L.latLng(fromLatitude, fromLongitude);
       const northEast = L.latLng(toLatitude, toLongitude);
       const bounds = L.latLngBounds(southWest, northEast);
