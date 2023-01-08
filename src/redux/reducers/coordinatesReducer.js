@@ -52,7 +52,7 @@ const initialCoordinates = [
   {
     id: Math.random(),
     number: '7',
-    fromLatitude: '59.83567701',
+    fromLatitude: '51.83567701',
     fromLongitude: '30.38064206',
     toLatitude: '60.84660399',
     toLongitude: '35.29496392',
@@ -60,7 +60,7 @@ const initialCoordinates = [
   {
     id: Math.random(),
     number: '8',
-    fromLatitude: '59.83567701',
+    fromLatitude: '55.83567701',
     fromLongitude: '30.38064206',
     toLatitude: '63.84660399',
     toLongitude: '33.29496392',
@@ -68,10 +68,10 @@ const initialCoordinates = [
   {
     id: Math.random(),
     number: '9',
-    fromLatitude: '59.83567701',
+    fromLatitude: '58.83567701',
     fromLongitude: '30.38064206',
     toLatitude: '68.84660399',
-    toLongitude: '31.29496392',
+    toLongitude: '32.29496392',
   }
 ];
 
