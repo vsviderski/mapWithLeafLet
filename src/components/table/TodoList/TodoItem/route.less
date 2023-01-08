@@ -2,19 +2,53 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 55px;
   width: 95%;
   height: 55px;
+  margin: 0 auto;
+
 }
 
+.todoItem_lists {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
+  height: 55px;
+  margin: 0 auto;
+
+}
+
+.todoItem_ul-active{
+  border:1px solid #3498db;
+  border-radius:15px;
+  background-color:bisque;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
+  height: 55px;
+  margin: 0 auto;
+}
 .todoItem_li {
   width: 20%;
   text-align: center;
   word-break: break-all;
-
   color: #000;
   position: relative;
 }
+
+
+.todoItem_li:first-child {
+  width: 20%;
+  text-align: center;
+  word-break: break-all;
+  margin-left: 25px;
+  color: #000;
+  position: relative;
+}
+
+
+
 
 .column {
   font-weight: 700;
@@ -54,13 +88,21 @@ button:hover {
 
 .wrap-content {
   display: flex;
+  max-width: 700px;
+  width: 100%;
 }
 
 .wrap-content__active {
-  display: flex;
-  background-color: #3498db;
+  border:2px solid #3498db;
+  border-radius:15px;
+  background-color:bisque;
 }
-
+.wrap-content:hover{
+  cursor: pointer;
+}
+.wrap-content__active:hover{
+  cursor: pointer;
+}
 .save_button {
   position: absolute;
   right: 4px;
