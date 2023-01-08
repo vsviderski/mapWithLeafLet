@@ -6,10 +6,6 @@ import 'leaflet-routing-machine';
 import 'leaflet-routing-machine/dist/leaflet-routing-machine.css';
 
 const LeafletMap = () => {
-
-
-
- 
   const polylineData = useSelector(state => state.polyline.polylineOptions);
   const [map, setMap] = useState(null)
   const [route, setRoute] = useState(null)
@@ -17,12 +13,10 @@ const LeafletMap = () => {
   useEffect(() => {
     const leafletMap = L.map('map').setView([51.505, -0.09], 13);
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(leafletMap);
-    setMap(leafletMap)
+    setMap(leafletMap);
   }, [])
 
-
   useEffect(() => {
-
     if (polylineData) {
       const [fromLatitude, fromLongitude] = polylineData.waypoints[0].location
       const [toLatitude, toLongitude] = polylineData.waypoints[1].location
@@ -33,11 +27,10 @@ const LeafletMap = () => {
       }
 
       if (route) {
-        route.spliceWaypoints(0, 2)
+        route.remove()
       }
 
-      map.setView([fromLatitude, fromLongitude], 13);
-      L.icon({})
+      map.setView([fromLatitude, fromLongitude]);
 
       const newRoute = L.Routing.control({
         waypoints: [L.latLng(fromLatitude, fromLongitude), L.latLng(toLatitude, toLongitude)],
@@ -45,23 +38,16 @@ const LeafletMap = () => {
           styles: [
             { color: '#439958', fill: true, fillColor: 'yellow', weight: 5, fillOpacity: 0.4 },
           ]
-        }
+        },
+        collapsible: true
       }).addTo(map)
+      
+      const southWest = L.latLng(fromLatitude, fromLongitude);
+      const northEast = L.latLng(toLatitude, toLongitude);
+      const bounds = L.latLngBounds(southWest, northEast);
+      map.flyToBounds(bounds);
 
       setRoute(newRoute)
-
-
-
-    
-
-
-      let southWest = L.latLng(59.84660399, 30.29496392),
-      northEast = L.latLng(59.82934196, 30.82423701),
-      bounds = L.latLngBounds(southWest, northEast);
-      map.panInsideBounds(bounds);
-    
-
-
     }
   }, [polylineData, map]);
 

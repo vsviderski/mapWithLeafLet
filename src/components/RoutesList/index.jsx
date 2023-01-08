@@ -1,6 +1,6 @@
-import './table.css';
-import AddRoute from './AddTodo';
-import RoutesTable from './TodoList';
+import AddRoute from './AddRoute';
+import RoutesTable from './RoutesTable';
+import './routesList.css';
 
 const RoutesList = () => {
   return (

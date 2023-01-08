@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useActions } from "hooks/useActions";
 import Input from "./components/Input";
-import "./addtodo.less";
+import "./addRoute.less";
 
 const AddRoute = () => {
 	const { addCoordinate } = useActions();
