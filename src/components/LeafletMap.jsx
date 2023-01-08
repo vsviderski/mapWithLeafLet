@@ -40,14 +40,14 @@ const LeafletMap = () => {
           ]
         },
         collapsible: true
-      }).addTo(map)
+      }).addTo(map);
       
       const southWest = L.latLng(fromLatitude, fromLongitude);
       const northEast = L.latLng(toLatitude, toLongitude);
       const bounds = L.latLngBounds(southWest, northEast);
       map.flyToBounds(bounds);
 
-      setRoute(newRoute)
+      setRoute(newRoute);
     }
   }, [polylineData, map]);
 
