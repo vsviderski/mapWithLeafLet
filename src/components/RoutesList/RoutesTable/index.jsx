@@ -7,8 +7,6 @@ const RoutesTable = () => {
 	const routes = useSelector(state => state.coordinates);
 	const [state, setState] = useState(null)
 
-	const handleClick = (todoItem) => setState(todoItem)
-
 	return (
 		<div>
 			{!!routes.length && <div className="todolist">
@@ -20,7 +18,11 @@ const RoutesTable = () => {
 			</div>
 			}
 			{routes.map((todoItem) => (
-				<div key={todoItem.id} className={state === todoItem ? "todoItem_ul-active" : "todoItem_ul"} onClick={() => handleClick(todoItem)}>
+				<div 
+					key={todoItem.id} 
+					className={state === todoItem ? "todoItem_ul-active" : "todoItem_ul"} 
+					onClick={() => setState(todoItem)}
+				>
 					<Route todoItem={todoItem} />
 				</div>
 			))}
