@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import Route from "./Route";
-import "./routesTable.less";
+import "./style.less";
 
 const RoutesTable = () => {
 	const routes = useSelector(state => state.coordinates);

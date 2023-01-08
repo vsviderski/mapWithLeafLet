@@ -1,6 +1,6 @@
 import LeafletMap from "./components/LeafletMap";
 import RoutesList from "components/RoutesList";
-import "./App.css";
+import "./App.less";
 
 const App = () => {
 	return (

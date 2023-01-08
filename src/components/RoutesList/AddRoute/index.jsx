@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useActions } from "hooks/useActions";
 import Input from "./components/Input";
-import "./addRoute.less";
+import "./style.less";
 
 const AddRoute = () => {
 	const { addCoordinate } = useActions();
@@ -66,7 +66,7 @@ const AddRoute = () => {
 						onChange={setToLatitude}
 					/>
 					<Input
-						inputError={isCheckForm}
+							inputError={isCheckForm}
 						title="Координаты ДО"
 						placeholder="ДО lng."
 						value={toLongitude}

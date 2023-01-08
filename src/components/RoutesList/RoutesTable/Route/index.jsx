@@ -1,7 +1,6 @@
 import { useActions } from "hooks/useActions";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
-import "./route.less";
+ import {DeleteOutlined} from '@ant-design/icons'
+import "./style.less";
 
 const Route = ({ route }) => {
 	const { removeCoordinate, getPolylineAction } = useActions();
@@ -22,7 +21,7 @@ const Route = ({ route }) => {
 					<div className="buttons">
 						<button onClick={onRemoveClick}>
 							<span className="text">
-								<FontAwesomeIcon icon={faTrash} />
+							<DeleteOutlined />
 							</span>
 						</button>
 					</div>

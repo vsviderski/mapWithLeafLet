@@ -1,0 +1,107 @@
+.todoItem_ul {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 95%;
+	height: 55px;
+	margin: 0 auto;
+}
+
+.todoItem_lists {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 95%;
+	height: 55px;
+	margin: 0 auto;
+}
+
+.todoItem_ul-active {
+	border: 1px solid #3498db;
+	border-radius: 15px;
+	background-color: bisque;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 95%;
+	height: 55px;
+	margin: 0 auto;
+}
+
+.todoItem_li {
+	width: 20%;
+	text-align: center;
+	word-break: break-all;
+	color: #000;
+	position: relative;
+}
+
+.todoItem_li:first-child {
+	width: 20%;
+	text-align: center;
+	word-break: break-all;
+	margin-left: 25px;
+	color: #000;
+	position: relative;
+}
+
+.column {
+	font-weight: 700;
+	font-size: 16px;
+	font-family: "Caveat", cursive;
+}
+
+button {
+	height: 40px;
+	border-radius: 5px;
+	margin: 0 5px;
+	border: 2px solid #cdcdcd;
+	color: #fff;
+	box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+	-webkit-transition: all 150ms ease-in-out;
+	transition: all 150ms ease-in-out;
+	margin-bottom: 50px;
+	background: linear-gradient(to bottom, #3399ff, #70ffff);
+	&:hover {
+		cursor: pointer;
+		box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+	}
+}
+
+.buttons {
+	position: absolute;
+	top: -20px;
+}
+
+.edit_inputs {
+	display: flex;
+}
+
+.text {
+	color: #ffecec;
+	font-weight: 700;
+}
+
+.wrap-content {
+	display: flex;
+	max-width: 700px;
+	width: 100%;
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.wrap-content__active {
+	border: 2px solid #3498db;
+	border-radius: 15px;
+	background-color: bisque;
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.save_button {
+	position: absolute;
+	right: 4px;
+	top: 6px;
+}
